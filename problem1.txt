@@ -11,3 +11,47 @@ elif operator == "/":
      print(a / b)
 else:
      print("invalid operator")
+
+# Advanced level of calculator  by using multiple user input :
+
+def calculator():
+   print("Multi input calculator(Type 'exit' to quit)")
+   print("Operations: + , - , * ,/ ")
+   while True:
+       numbers = input("enter number seperated by spaces(or 'exit' to 'quit):")
+       if numbers.lower() == 'exit':
+           print("Goodbye!")
+           break
+       operator = input("Enter operation(+,-,*,/):")
+       if operator.lower() == 'exit':
+           print("Goodbye!")
+           break
+       elif operator not in ['+','-','*','/']:
+           print("Invalid operator! Please choose from + , - , * ,/.")
+           continue
+       try:
+           numbers = [float(num) for num in numbers.split()]
+       except ValueError:
+        print("Invalid input!please enter number only .")
+        continue
+       if not numbers:
+            print ("You must enter at least one number .")
+            continue
+       result = numbers[0]
+       for num in numbers[1:]:
+            if operator =='+':
+                result +=num
+            elif operator =='-':
+                result -= num
+            elif operator =='*':
+                result*= num
+            elif operator =='/':
+                if num ==0:
+                    print("eror! division by zero.")
+                    break
+                result /= num
+
+            print("Result:",result)
+            print("-"*30)
+calculator()
+

@@ -1,0 +1,13 @@
+a = float(input("Enter the number: "))
+b = float(input("Enter the second: "))
+operator = input( "enter any opertors in this  ' + - * / ': " )
+if operator == "+":
+    print(a + b)
+elif operator == "-":
+     print(a - b)
+elif operator == "*":
+     print(a * b)
+elif operator == "/":
+     print(a / b)
+else:
+     print("invalid operator")

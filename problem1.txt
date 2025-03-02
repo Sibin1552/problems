@@ -11,9 +11,9 @@ elif operator == "/":
      print(a / b)
 else:
      print("invalid operator")
-
+---------------------------------------------------------------
 # Advanced level of calculator  by using multiple user input :
-
+---------------------------------------------------------------
 def calculator():
    print("Multi input calculator(Type 'exit' to quit)")
    print("Operations: + , - , * ,/ ")
@@ -54,4 +54,67 @@ def calculator():
             print("Result:",result)
             print("-"*30)
 calculator()
+
+------------------------------------------
+Inventory system:
+------------------------------------------
+inventory =[]
+def view_inventory():
+    """Display all item in inventory."""
+    if not inventory :
+        print("\n Inventory is empty :")
+    else:
+        print("\n Current inventory:")
+        for item in inventory :
+            print(f"Name: {item['name']},Quantity: {item['quantity']}")
+
+def add_item():
+    """Add a new item to the inventory."""
+    name = input("Enter item name:")
+    quantity = int (input ("Enter quantity :"))
+    inventory.append({"name": name ,"quantity":quantity })
+    print("item added succefully!")
+
+def update_stock():
+    """Update the quantity of an existing item."""
+    name = input ("Enter item name to update:")
+    for item in inventory:
+        if item["name"] == name:
+            new_quantity = int(input("Enter new quantity:"))
+            item["quantity"] = new.quatity
+            print("Stock updated successfully! ")
+def delete_stock():
+    """Remove an item from inventory."""
+    name = input("Enter item name to delete:")
+    global inventory
+    inventory = [item for item in inventory if item["name"] != name]
+    print("Item deleted successfully!")
+
+def menu():
+    while True:
+        print("\n Inventory System")
+        print("1. View Inventory ")
+        print("2. Add Item ")
+        print("3. Update stock ")
+        print("4. Delete stock ")
+        print("5. Exit")
+
+        print("\n choose from 1 - 5")
+        choice = input("Enter your choice:")
+
+        if choice == "1":
+            view_inventory()
+        elif choice == "2":
+            add_item()
+        elif choice == "3":
+            update_stock()
+        elif choice == "4":
+             delete_stock()
+        elif choice == "5":
+            print("Exiting program....")
+            break
+        else:
+            print("Invalid choice! Try again.")
+menu()
+
 

@@ -1,3 +1,6 @@
+------------------------------------
+         Simple calculator
+------------------------------------
 a = float(input("Enter the number: "))
 b = float(input("Enter the second: "))
 operator = input( "enter any opertors in this  ' + - * / ': " )
